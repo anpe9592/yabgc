@@ -44,7 +44,8 @@ class Preloader {
 
     if (this.cache.isSoundDecoded('titleMusic') && this.ready === false)	{
       this.ready = true
-      this.state.start('MainMenu')
+      //this.state.start('MainMenu')
+      this.state.start('Game')
     }
   }
 }
