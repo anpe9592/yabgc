@@ -21,10 +21,14 @@ class Preloader {
     // Here we load the rest of the assets our game needs.
     // As this is just a Project Template I've not provided these assets, swap them for your own.
     this.load.image('titlepage', 'assets/images/logo.png')
-    this.load.atlas('playButton', 'assets/images/button_texture_atlas.png', 'assets/images/button_texture_atlas.json')
+    // this.load.atlas('playButton', 'assets/images/button_texture_atlas.png', 'assets/images/button_texture_atlas.json')
     this.load.audio('titleMusic', ['assets/audio/oedipus_ark_pandora.mp3']) // main_menu.mp3
     this.load.bitmapFont('caslon', 'assets/fonts/caslon.png', 'assets/fonts/caslon.fnt') // .xml
     // + lots of other required assets here
+
+    this.load.image('analog', 'assets/images/fusia.png')
+    this.load.image('arrow', 'assets/images/longarrow2.png')
+    this.load.image('pangball', 'assets/images/pangball.png')
   }
 
   create () {
@@ -42,9 +46,9 @@ class Preloader {
     // If you don't have any music in your game then put the game.state.start line into the create function and delete
     // the update function completely.
 
-    if (this.cache.isSoundDecoded('titleMusic') && this.ready === false)	{
+    if (this.cache.isSoundDecoded('titleMusic') && this.ready === false) {
       this.ready = true
-      //this.state.start('MainMenu')
+      // this.state.start('MainMenu')
       this.state.start('Game')
     }
   }
