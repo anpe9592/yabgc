@@ -109,13 +109,6 @@ class Game {
 
   render () {
 
-    // this.debug.text("Drag the ball and release to launch", 32, 32);
-
-    // this.debug.bodyInfo(this.ball, 32, 64);
-
-    // game.debug.spriteInfo(ball, 32, 64);
-    // game.debug.text("Launch Velocity: " + parseInt(launchVelocity), 32, 250);
-
   }
 
   quitGame (pointer) {
