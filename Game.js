@@ -39,7 +39,7 @@ class Game {
     this.physics.arcade.gravity.y = 200
     this.stage.backgroundColor = '#0072bc'
 
-    var graphics = this.add.graphics(0, 0)
+    let graphics = this.add.graphics(0, 0)
     graphics.beginFill(0x049e0c)
     graphics.drawRect(395, 350, 10, 250)
 
