@@ -71,27 +71,23 @@ class Game {
     // Enable input.
     this.ball.inputEnabled = true
     this.ball.input.start(0, true)
-    this.ball.events.onInputDown.add(this.sat)
-    this.ball.events.onInputUp.add(this.launch)
-  }
+    this.ball.events.onInputDown.add(() => {  // set
+      this.ball.body.moves = false
+      this.ball.body.velocity.setTo(0, 0)
+      this.ball.body.allowGravity = false
+      this.catchFlag = true
+    })
+    this.ball.events.onInputUp.add(() => {  // launch
+      this.catchFlag = false
 
-  sat () {
-    this.ball.body.moves = false
-    this.ball.body.velocity.setTo(0, 0)
-    this.ball.body.allowGravity = false
-    this.catchFlag = true
-  }
-
-  launch () {
-    this.catchFlag = false
-
-    this.ball.body.moves = true
-    this.arrow.alpha = 0
-    this.analog.alpha = 0
-    Xvector = (this.arrow.x - this.ball.x) * 3
-    Yvector = (this.arrow.y - this.ball.y) * 3
-    this.ball.body.allowGravity = true
-    this.ball.body.velocity.setTo(Xvector, Yvector)
+      this.ball.body.moves = true
+      this.arrow.alpha = 0
+      this.analog.alpha = 0
+      let Xvector = (this.arrow.x - this.ball.x) * 3
+      let Yvector = (this.arrow.y - this.ball.y) * 3
+      this.ball.body.allowGravity = true
+      this.ball.body.velocity.setTo(Xvector, Yvector)
+    })
   }
 
   update () {
