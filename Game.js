@@ -41,9 +41,9 @@ class Game {
 
     let graphics = this.add.graphics(0, 0)
     graphics.beginFill(0x049e0c)
-    graphics.drawRect(195, 350, 10, 250) // <-- the green rectangle
+    graphics.drawRect(195, 450, 10, 250) // <-- the green rectangle
 
-    this.analog = this.add.sprite(200, 350, 'analog') // <-- fusia.png
+    this.analog = this.add.sprite(200, 450, 'analog') // <-- fusia.png
 
     this.physics.enable(this.analog, Phaser.Physics.ARCADE)
 
@@ -53,7 +53,7 @@ class Game {
     this.analog.alpha = 0
     this.analog.anchor.setTo(0.5, 0.0)
 
-    this.arrow = this.add.sprite(200, 350, 'arrow') // <--- longarrow2.png
+    this.arrow = this.add.sprite(200, 450, 'arrow') // <--- longarrow2.png
 
     this.physics.enable(this.arrow, Phaser.Physics.ARCADE)
 
