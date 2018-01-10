@@ -61,13 +61,7 @@ class Game {
     this.arrow.body.moves = false
     this.arrow.body.allowGravity = false
     this.arrow.alpha = 0
-/*
-    this.ball = this.add.sprite(100, 400, 'pangball')
-    this.physics.enable(this.ball, Phaser.Physics.ARCADE)
-    this.ball.anchor.setTo(0.5, 0.5)
-    this.ball.body.collideWorldBounds = true
-    this.ball.body.bounce.setTo(0.9, 0.9)
-*/
+
     this.ball = this.add.sprite(100, 400, 'pangball')
     this.physics.enable(this.ball, Phaser.Physics.ARCADE)
     this.ball.anchor.setTo(0.5, 0.5)
