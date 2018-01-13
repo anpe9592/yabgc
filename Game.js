@@ -26,9 +26,11 @@ class Game {
     this.analog = null
     this.arrow = null
     this.ball = null
+    this.veg = null // veggies
 
     this.catchFlag = false
     this.launchVelocity = 0
+    this.group
   }
 
   create () {
@@ -94,6 +96,12 @@ class Game {
       this.ball.body.allowGravity = true
       this.ball.body.velocity.setTo(Xvector, Yvector)
     })
+
+    this.group = this.add.physicsGroup()
+
+    for (let i = 0; i < 20; i++) {
+        let c = this.group.create(this.rnd.between(100, 770), this.rnd.between(0, 570), 'veggies', 17)
+    }
   }
 
   update () {
