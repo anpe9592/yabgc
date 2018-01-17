@@ -27,6 +27,7 @@ class Game {
     this.arrow = null
     this.ball = null
     this.veg = null // veggies
+    this.background = null
 
     this.catchFlag = false
     this.launchVelocity = 0
@@ -39,7 +40,8 @@ class Game {
 
     // set global gravity
     this.physics.arcade.gravity.y = 200
-    this.stage.backgroundColor = '#0072bc'
+    this.background = this.add.sprite(0, 0, 'bg')
+    this.background.scale.setTo(2.5, 2.5);
 
     let graphics = this.add.graphics(0, 0)
     graphics.beginFill(0x049e0c)

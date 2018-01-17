@@ -28,6 +28,7 @@ class Preloader {
     this.load.image('analog', 'assets/images/fusia.png')
     this.load.image('arrow', 'assets/images/longarrow2.png')
     this.load.image('pangball', 'assets/images/pangball.png')
+    this.load.image('bg', 'assets/images/bg.png')
     this.load.spritesheet('veggies', 'assets/images/fruitnveg32wh37.png', 32, 32)
   }
 
