@@ -41,7 +41,7 @@ class Game {
     // set global gravity
     this.physics.arcade.gravity.y = 200
     this.background = this.add.sprite(0, 0, 'bg')
-    this.background.scale.setTo(2.5, 2.5);
+    this.background.scale.setTo(2.5, 2.5)
 
     let graphics = this.add.graphics(0, 0)
     graphics.beginFill(0x049e0c)
@@ -100,13 +100,13 @@ class Game {
     })
 
     this.group = this.add.physicsGroup()
-    
+
     for (let i = 0; i < 20; i++) {
-        let c = this.group.create(this.rnd.between(100, 770), this.rnd.between(0, 570), 'veggies', 17)
-        c.body.mass = -100
-        c.body.collideWorldBounds = true;
-        c.body.bounce.y = 0.8;
-        c.body.gravity.y = 200;
+      let c = this.group.create(this.rnd.between(100, 770), this.rnd.between(0, 570), 'veggies', 17)
+      c.body.mass = -100
+      c.body.collideWorldBounds = true
+      c.body.bounce.y = 0.8
+      c.body.gravity.y = 200
     }
   }
 
