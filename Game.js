@@ -71,6 +71,7 @@ class Game {
     this.ball.anchor.setTo(0.5, 0.5)
     this.ball.body.collideWorldBounds = true
     this.ball.body.bounce.setTo(0.9, 0.9)
+    // restart the ball on hit to ground
     /* this.ball.body.onWorldBounds = new Phaser.Signal()  //  By default the Signal is empty, so we create it here
     this.ball.body.onWorldBounds.add(() => {            //  And then listen for it
       this.ball.body.velocity.setTo(0, 0)
@@ -114,6 +115,11 @@ class Game {
     // Honestly, just about anything could go here. It's YOUR game after all. Eat your heart out!
     this.arrow.rotation = this.physics.arcade.angleBetween(this.arrow, this.ball)
 
+    if (this.physics.arcade.collide(this.ball, this.group, collisionHandler, processHandler, this))
+    {
+        console.log('boom');
+    }
+
     if (this.catchFlag === true) {
         //  Track the ball sprite to the mouse
       this.ball.x = this.input.activePointer.worldX
@@ -138,4 +144,19 @@ class Game {
     // Then let's go back to the main menu.
     this.state.start('MainMenu')
   }
+}
+
+function processHandler (player, veg) {
+
+  return true;
+
+}
+
+function collisionHandler (player, veg) {
+
+  if (veg.frame == 17)
+  {
+      veg.kill();
+  }
+
 }
