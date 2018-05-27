@@ -115,13 +115,15 @@ class Game {
     // Honestly, just about anything could go here. It's YOUR game after all. Eat your heart out!
     this.arrow.rotation = this.physics.arcade.angleBetween(this.arrow, this.ball)
 
-    if (this.physics.arcade.collide(this.ball, this.group, collisionHandler, processHandler, this))
-    {
-        console.log('boom');
+    if (this.physics.arcade.collide(this.ball, this.group, collisionHandler, processHandler, this)) {
+      console.log('boom');
+      this.ball.body.velocity.setTo(0, 0)
+      this.ball.body.x = 100
+      this.ball.body.y = 400
     }
 
     if (this.catchFlag === true) {
-        //  Track the ball sprite to the mouse
+      //  Track the ball sprite to the mouse
       this.ball.x = this.input.activePointer.worldX
       this.ball.y = this.input.activePointer.worldY
 
