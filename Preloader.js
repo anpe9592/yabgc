@@ -30,7 +30,6 @@ class Preloader {
     this.load.image('pangball', 'assets/images/bird.png')
     this.load.image('bg', 'assets/images/bg.png')
     this.load.image('veggies', 'assets/images/pig.png')
-    //this.load.spritesheet('veggies', 'assets/images/fruitnveg32wh37.png', 32, 32)
   }
 
   create () {

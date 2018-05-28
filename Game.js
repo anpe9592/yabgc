@@ -3,22 +3,22 @@ class Game {
   constructor (game) {
     // When a State is added to Phaser it automatically has the following properties set on it, even if they already exist:
 
-    this.game      //  a reference to the currently running game (Phaser.Game)
-    this.add       //  used to add sprites, text, groups, etc (Phaser.GameObjectFactory)
-    this.camera    //  a reference to the game camera (Phaser.Camera)
-    this.cache     //  the game cache (Phaser.Cache)
-    this.input     //  the global input manager. You can access this.input.keyboard, this.input.mouse, as well from it. (Phaser.Input)
-    this.load      //  for preloading assets (Phaser.Loader)
-    this.math      //  lots of useful common math operations (Phaser.Math)
-    this.sound     //  the sound manager - add a sound, play one, set-up markers, etc (Phaser.SoundManager)
-    this.stage     //  the game stage (Phaser.Stage)
-    this.time      //  the clock (Phaser.Time)
-    this.tweens    //  the tween manager (Phaser.TweenManager)
-    this.state     //  the state manager (Phaser.StateManager)
-    this.world     //  the game world (Phaser.World)
+    this.game //  a reference to the currently running game (Phaser.Game)
+    this.add //  used to add sprites, text, groups, etc (Phaser.GameObjectFactory)
+    this.camera //  a reference to the game camera (Phaser.Camera)
+    this.cache //  the game cache (Phaser.Cache)
+    this.input //  the global input manager. You can access this.input.keyboard, this.input.mouse, as well from it. (Phaser.Input)
+    this.load //  for preloading assets (Phaser.Loader)
+    this.math //  lots of useful common math operations (Phaser.Math)
+    this.sound //  the sound manager - add a sound, play one, set-up markers, etc (Phaser.SoundManager)
+    this.stage //  the game stage (Phaser.Stage)
+    this.time //  the clock (Phaser.Time)
+    this.tweens //  the tween manager (Phaser.TweenManager)
+    this.state //  the state manager (Phaser.StateManager)
+    this.world //  the game world (Phaser.World)
     this.particles //  the particle manager (Phaser.Particles)
-    this.physics   //  the physics manager (Phaser.Physics)
-    this.rnd       //  the repeatable random number generator (Phaser.RandomDataGenerator)
+    this.physics //  the physics manager (Phaser.Physics)
+    this.rnd //  the repeatable random number generator (Phaser.RandomDataGenerator)
 
     // You can use any of these from any function within this State.
     // But do consider them as being 'reserved words', i.e. don't create a property for your own game called "world" or you'll over-write the world reference.
@@ -71,24 +71,17 @@ class Game {
     this.ball.anchor.setTo(0.5, 0.5)
     this.ball.body.collideWorldBounds = true
     this.ball.body.bounce.setTo(0.9, 0.9)
-    // restart the ball on hit to ground
-    /* this.ball.body.onWorldBounds = new Phaser.Signal()  //  By default the Signal is empty, so we create it here
-    this.ball.body.onWorldBounds.add(() => {            //  And then listen for it
-      this.ball.body.velocity.setTo(0, 0)
-      this.ball.body.x = 100
-      this.ball.body.y = 400
-    })    */
 
     // Enable input.
     this.ball.inputEnabled = true
     this.ball.input.start(0, true)
-    this.ball.events.onInputDown.add(() => {  // set
+    this.ball.events.onInputDown.add(() => { // set
       this.ball.body.moves = false
       this.ball.body.velocity.setTo(0, 0)
       this.ball.body.allowGravity = false
       this.catchFlag = true
     })
-    this.ball.events.onInputUp.add(() => {  // launch
+    this.ball.events.onInputUp.add(() => { // launch
       this.catchFlag = false
 
       this.ball.body.moves = true
@@ -116,7 +109,7 @@ class Game {
     this.arrow.rotation = this.physics.arcade.angleBetween(this.arrow, this.ball)
 
     if (this.physics.arcade.collide(this.ball, this.group, collisionHandler, processHandler, this)) {
-      console.log('boom');
+      console.log('boom')
       this.ball.body.velocity.setTo(0, 0)
       this.ball.body.x = 100
       this.ball.body.y = 400
@@ -149,9 +142,9 @@ class Game {
 }
 
 function processHandler (player, veg) {
-  return true;
+  return true
 }
 
 function collisionHandler (player, veg) {
-  veg.kill();
+  veg.kill()
 }
