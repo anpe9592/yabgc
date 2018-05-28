@@ -20,7 +20,6 @@ class Preloader {
 
     // Here we load the rest of the assets our game needs.
     // As this is just a Project Template I've not provided these assets, swap them for your own.
-    this.load.image('titlepage', 'assets/images/logo.png')
     // this.load.atlas('playButton', 'assets/images/button_texture_atlas.png', 'assets/images/button_texture_atlas.json')
     this.load.audio('titleMusic', ['assets/audio/oedipus_ark_pandora.mp3']) // main_menu.mp3
     this.load.bitmapFont('caslon', 'assets/fonts/caslon.png', 'assets/fonts/caslon.fnt') // .xml
@@ -28,7 +27,9 @@ class Preloader {
 
     this.load.image('analog', 'assets/images/fusia.png')
     this.load.image('arrow', 'assets/images/longarrow2.png')
-    this.load.image('pangball', 'assets/images/pangball.png')
+    this.load.image('pangball', 'assets/images/bird.png')
+    this.load.image('bg', 'assets/images/bg.png')
+    this.load.image('veggies', 'assets/images/pig.png')
   }
 
   create () {
