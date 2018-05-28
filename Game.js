@@ -103,7 +103,7 @@ class Game {
     this.group = this.add.physicsGroup()
 
     for (let i = 0; i < 20; i++) {
-      let c = this.group.create(this.rnd.between(100, 770), this.rnd.between(0, 570), 'veggies', 17)
+      let c = this.group.create(this.rnd.between(100, 770), this.rnd.between(0, 570), 'veggies')
       c.body.mass = -100
       c.body.collideWorldBounds = true
       c.body.bounce.y = 0.8
@@ -149,16 +149,9 @@ class Game {
 }
 
 function processHandler (player, veg) {
-
   return true;
-
 }
 
 function collisionHandler (player, veg) {
-
-  if (veg.frame == 17)
-  {
-      veg.kill();
-  }
-
+  veg.kill();
 }
